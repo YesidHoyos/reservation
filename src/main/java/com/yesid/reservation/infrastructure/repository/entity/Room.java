@@ -27,6 +27,7 @@ public class Room {
 	private String hotel;
 	private String city;
 	private BigDecimal price;
+	private String status;
 	private String rating;
 	
 	@OneToMany(mappedBy = "room")

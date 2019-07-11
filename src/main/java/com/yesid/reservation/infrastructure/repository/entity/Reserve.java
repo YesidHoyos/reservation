@@ -26,7 +26,8 @@ public class Reserve {
 	private LocalDateTime checkIn;
 	private LocalDateTime checkOut;
 	private int numberPeople; 
-	private String state;
+	private String status;
+	private BigDecimal finalPrice;
 	
 	@ManyToOne
 	@JoinColumn(name = "room_id")
