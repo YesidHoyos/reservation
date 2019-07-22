@@ -13,11 +13,14 @@ import javax.persistence.UniqueConstraint;
 import org.hibernate.annotations.GenericGenerator;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 
 @Entity
 @Table(name = "client", uniqueConstraints={@UniqueConstraint(columnNames={"dni"})})
 @Data
-public class Client {
+@NoArgsConstructor
+public class ClientEntity {
 	
 	@Id
 	@GeneratedValue(generator = "system-uuid")
@@ -31,9 +34,6 @@ public class Client {
 	private String email;
 	
 	@OneToMany(mappedBy = "client")
-	private Set<Reserve> reserves;
-	
-	public Client() {
-		
-	}
+	private Set<ReserveEntity> reserves;
+
 }

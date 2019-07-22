@@ -12,11 +12,13 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 @Entity
 @Table(name = "room")
-public class Room {
+public class RoomEntity {
 	
 	@Id
 	@GeneratedValue(generator = "system-uuid")
@@ -31,8 +33,6 @@ public class Room {
 	private String rating;
 	
 	@OneToMany(mappedBy = "room")
-	private Set<Reserve> reserves;
-	
-	public Room() {
-	}
+	private Set<ReserveEntity> reserves;
+
 }

@@ -1,8 +1,18 @@
 package com.yesid.reservation.application.handler;
 
-public class RegisterClientHandler {
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-	public int regsiterClient() {
-		return 1;
+import com.yesid.reservation.domain.model.ClientDto;
+import com.yesid.reservation.domain.services.RegisterClientServices;
+ 
+@Component
+public class RegisterClientHandler {
+	
+	@Autowired
+	RegisterClientServices registerClientServices;
+
+	public String registerClient(ClientDto client) {
+		return registerClientServices.registerClient(client);
 	}
 }
